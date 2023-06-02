@@ -36,13 +36,16 @@ const LoginForm = () => {
 
                     return errors;
                   }}
-                  initialValues={{ radioOption: "", email: "", password: "" }}
-
+                  initialValues={{
+                    radioOption: "login",
+                    email: "",
+                    password: "",
+                  }}
                   onSubmit={(values) => {
                     console.log("form input data =>", values);
                   }}
                 >
-                  {({ formikProps, errors, touched }) => (
+                  {({ values, errors, touched }) => (
                     <Form className="flex justify-center items-center flex-col w-full">
                       <div className="flex justify-between relative rounded-[15px] h-[50px] w-full mt-[25px] mb-[25px] border border-solid border-[#DCDCDC]">
                         <Field
@@ -54,7 +57,11 @@ const LoginForm = () => {
                         />
                         <label
                           for="signup"
-                          className="w-full h-full text-[16px] text-center leading-[48px]"
+                          className={
+                            values.radioOption === "signup"
+                              ? "w-full h-full text-[16px] text-center leading-[48px] bg-[#ffbe33] rounded-[12px]"
+                              : "w-full h-full text-[16px] text-center leading-[48px]"
+                          }
                         >
                           ثبت نام
                         </label>
@@ -67,7 +74,11 @@ const LoginForm = () => {
                         />
                         <label
                           for="login"
-                          className="w-full h-full text-[16px] text-center leading-[48px] bg-[#ffbe33] rounded-[12px]"
+                          className={
+                            values.radioOption === "login"
+                              ? "w-full h-full text-[16px] text-center leading-[48px] bg-[#ffbe33] rounded-[12px]"
+                              : "w-full h-full text-[16px] text-center leading-[48px]"
+                          }
                         >
                           ورود
                         </label>
