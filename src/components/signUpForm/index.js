@@ -26,10 +26,15 @@ const SignUpForm = () => {
         }}
         initialValues={{ radioOption: "", email: "", password: "" }}
       >
-        {({ Formik, errors, touched }) => (
+        {({ values, errors, touched }) => (
           <Form className="flex justify-center items-center flex-col">
-          
-            <div className="w-full flex items-center flex-col">
+            <div
+              className={
+                values.radioOption === "signup"
+                  ? "w-full flex items-center flex-col ml-[230%]"
+                  : "w-full flex items-center flex-col"
+              }
+            >
               <div className="w-full h-[80px]">
                 <Field
                   type="email"
@@ -60,13 +65,10 @@ const SignUpForm = () => {
                   ثبت نام
                 </button>
               </a>
-             
             </div>
           </Form>
         )}
       </Formik>
-
-     
     </>
   );
 };

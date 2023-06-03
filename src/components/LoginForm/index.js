@@ -47,43 +47,13 @@ const LoginForm = () => {
                 >
                   {({ values, errors, touched }) => (
                     <Form className="flex justify-center items-center flex-col w-full">
-                      <div className="flex justify-between relative rounded-[15px] h-[50px] w-full mt-[25px] mb-[25px] border border-solid border-[#DCDCDC]">
-                        <Field
-                          type="radio"
-                          name="radioOption"
-                          value="signup"
-                          id="signup"
-                          className="hidden"
-                        />
-                        <label
-                          for="signup"
-                          className={
-                            values.radioOption === "signup"
-                              ? "w-full h-full text-[16px] text-center leading-[48px] bg-[#ffbe33] rounded-[12px]"
-                              : "w-full h-full text-[16px] text-center leading-[48px]"
-                          }
-                        >
-                          ثبت نام
-                        </label>
-                        <Field
-                          type="radio"
-                          name="radioOption"
-                          value="login"
-                          id="login"
-                          className="hidden"
-                        />
-                        <label
-                          for="login"
-                          className={
-                            values.radioOption === "login"
-                              ? "w-full h-full text-[16px] text-center leading-[48px] bg-[#ffbe33] rounded-[12px]"
-                              : "w-full h-full text-[16px] text-center leading-[48px]"
-                          }
-                        >
-                          ورود
-                        </label>
-                      </div>
-                      <div className="w-full flex items-center flex-col">
+                      <div
+                        className={
+                          values.radioOption === "signup"
+                            ? "w-full flex items-center flex-col -ml-[215%]"
+                            : "w-full flex items-center flex-col"
+                        }
+                      >
                         <div className="w-full h-[80px]">
                           <Field
                             type="email"

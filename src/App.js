@@ -1,10 +1,10 @@
 import "./App.css";
-import LoginForm from "./components/LoginForm";
+import Forms from "./components/forms";
 
 function App() {
   return (
     <div className=" w-full h-screen">
-      <LoginForm />
+      <Forms />
     </div>
   );
 }
